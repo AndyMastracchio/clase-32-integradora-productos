@@ -12,7 +12,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/producto")
+@RequestMapping("/productos")
 public class ProductoController {
 
     private final ProductoService productoService;
@@ -23,7 +23,7 @@ public class ProductoController {
     }
 
     //Ejercicio 1
-    @PostMapping
+    @PostMapping("/new")
     public ResponseEntity<?> crearProducto(@RequestBody Producto producto) {
         productoService.guardar(producto);
         return new ResponseEntity<>(HttpStatus.OK);
@@ -46,6 +46,5 @@ public class ProductoController {
         productoService.elminar(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
-
 
 }
