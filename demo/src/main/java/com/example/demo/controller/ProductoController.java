@@ -41,9 +41,11 @@ public class ProductoController {
         return productoService.obtener(id);
     }
 
+    // La propiedad 'path' es otra forma de definir el path variable
+    // Es lo mismo que poner -> value = "/{id}" o directamente "/{id}"
     @DeleteMapping(path = "{id}")
-    public ResponseEntity<?> elminarProductoPorId(@PathVariable("id") Long id) {
-        productoService.elminar(id);
+    public ResponseEntity<?> eliminarProductoPorId(@PathVariable("id") Long id) {
+        productoService.eliminar(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

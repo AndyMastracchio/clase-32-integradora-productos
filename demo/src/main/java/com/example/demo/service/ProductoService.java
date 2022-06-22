@@ -9,5 +9,5 @@ public interface ProductoService {
     List<Producto> obtenerTodos();
     Producto obtener(Long id);
     void guardar(Producto producto);
-    void elminar(Long id);
+    void eliminar(Long id);
 }
